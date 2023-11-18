@@ -69,8 +69,8 @@ try:
 except:
     os.system('pip install python-cfonts')
 #print(('—'*25)+'\n•  By dd•\n'+('—'*25))
-output = render('DAVE', colors=['white','red','black' ,'green'], align='center')
-print(output)
+#output = render('DAVE', colors=['white','red','black' ,'green'], align='center')
+#print(output)
 #print(('—'*25)+'\n• By dd •\n'+('—'*25))
 print('\n')
 token = st.text_input('token التوكن : ', key="1")
