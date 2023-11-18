@@ -1,32 +1,4 @@
-from licensing.models import *
-from licensing.methods import Key, Helpers
-from functools import cache
-#from numba import njit
-
 import streamlit as st
-RSAPubKey = "<RSAKeyValue><Modulus>jOkJ/ntp5Btk81uuZHt+boBsf1zPF1L1+NpSz1tS/tPGihiDVF9E8BuT30SfDakZ4BZ1Kf+xbm1MjsjEKe8pVscjtkZD4/ejAoBq+Zbjvy8csSihnKFC2KfKOELGmj4zneGqyrCCAvGl22/LpLy1Fo0I63vd8y4THKxzXZ1+zfIFE8idCUfeyjyTGVz9+jEOEdM4LXly4QBo5jurkpytd8aEB6BYAwwxwHfOlS3vFsWNmSWVT/yyHAz5FvPfDABUnbH5zBAmtXUA5ryFMkZov1Y0Kts87bCzaENj+jA1SBi3dPlUBwbQugrH8u3cVv5qGVcc/W9XzIT0tSWwND7HKQ==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>"# ENTER RSAKEY
-auth = "WyI2NjU3NTY4NSIsIk1CSG1oUWtMOVFDTXV1R0w4T3daYVI5aWxYS1c3ZlhHVS90L2ZDUmQiXQ==" ## AUTHKEY WITH ACTIVATE !
-def Authkey():
-    key = 'LSMFH-WQBFG-ZDBSK-URFWQ'
-    result = Key.activate(token=auth,\
-        rsa_pub_key=RSAPubKey,\
-        product_id='22589', \
-        key=key,\
-        machine_code=Helpers.GetMachineCode())
-
-    if result[0] == None or not Helpers.IsOnRightMachine(result[0]):
-    # an error occurred or the key is invalid or it cannot be activated
-    # (eg. the limit of activated devices was achieved)
-        print("\033[95;1m المفتاح غلط: {0}".format(result[1]))
-        exit()
-    else:
-     #everything went fine if we are here!
-        print("\033[91;1mالمفتاح صحيح , حياك الله!\033[91;1m")
-        pass
-Authkey()
-#import termcolor as t 
-
-#import webbrowser
 import requests
 import bs4
 import json
