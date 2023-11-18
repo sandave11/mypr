@@ -1,4 +1,4 @@
 pyfiglet
-request
+requests
 bs4
 streamlit
