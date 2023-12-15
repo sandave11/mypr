@@ -2,3 +2,4 @@ pyfiglet
 requests
 bs4
 streamlit
+futures
